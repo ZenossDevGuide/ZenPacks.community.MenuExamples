@@ -1,0 +1,32 @@
+<h2>Add device details</h2>
+
+<form method="post"
+    name="createComment" tal:attributes="action context/absolute_url_path">
+    
+    <table>
+    <tr><td>
+    <span id="comment_label" style="color:white;">Comment: </span>
+    </td><td>
+        <input id="newComment" name="comments" style="width:200px">
+    </td></tr>
+
+<div id="dialog_buttons">
+
+<!-- Note that after clicking the OK button, control is returned to the defaultdetails view
+         as this is the default view as defined in the factory information for a device.
+-->
+
+<input tal:attributes="type string:submit;
+                        value string:OK"
+                        name="createComment:method" />
+
+<input tal:attributes="id string:dialog_cancel;
+                        type string:button;
+                        value string:Cancel;
+                        onclick string:$$('dialog').hide()" />
+
+</div>
+</table>
+<br>
+</form>
+              
