@@ -11,6 +11,11 @@ The ZenPack is virtually a copy of ZenPacks.skills1st.MenuExamples with a few
 items tidied up.  That ZenPack started from the ZenPackTemplate work done by 
 Chet Luther - see https://github.com/zenoss/ZenPackTemplate
 
+The original skills1st ZenPack accommodated techniques for both Zenoss 2, using 
+.pt files, **and** Zenoss 3 / 4 techniques using infos, interfaces, configure.zcml
+and JavaScript.  Examples have been preserved of both techniques in case people 
+need to update old Zenoss 2.x ZenPacks.
+
 Requirements & Dependencies
 ===========================
 
@@ -283,7 +288,7 @@ Screenshots
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/dist/ZenPacks.community.MenuExamples-2.0.0-py2.7.egg 
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/dist/ZenPacks.community.MenuExamples-2.0.0-py2.7.egg?raw=true 
 
 .. |menus1| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus1.jpg
 .. |menus2| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus2.jpg 
