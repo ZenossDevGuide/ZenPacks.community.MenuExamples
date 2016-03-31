@@ -99,7 +99,7 @@ The menu simply produces an alert popup with the UID of the component.
 Left hand menus applicable to all devices
 -----------------------------------------
 
-menu1
+Menu1
 -----
 
 This menu is defined in 2 different ways.  Look at the title of the page to see
@@ -127,8 +127,8 @@ but ExampleDevice objects have a slightly different page from all other devices.
 Left hand menus limited to specific devices
 --------------------------------------------
 
-   Menu2
-   -----
+Menu2
+-----
 
 The "My Example Menu 2" is only defined for devices of object class ExampleDevice and is
 only defined in the V3-style combination of browser/configure.zcml and 
