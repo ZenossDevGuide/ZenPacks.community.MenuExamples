@@ -47,7 +47,7 @@ The object class, ExampleDevice, inherits from Device and has an extra relations
 a contained component called ExampleComponent.
 
 There is also a command modeler plugin that gets hard disk information and populates the
-_existing_ hardware relationship, harddisks, which shows as an extra component in the
+*existing* hardware relationship, harddisks, which shows as an extra component in the
 left-hand menu.
 
 The ExampleDevice object class has its factory information actions extended with
