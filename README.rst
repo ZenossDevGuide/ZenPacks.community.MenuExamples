@@ -98,7 +98,9 @@ The menu simply produces an alert popup with the UID of the component.
 
 Left hand menus applicable to all devices
 -----------------------------------------
+
 menu1
+-----
 
 This menu is defined in 2 different ways.  Look at the title of the page to see
 whether it is being driven by action factory\_type\_information under the skins
@@ -121,28 +123,12 @@ layout is in browser/templates/myExampleMenuOne.pt .
 The result of this is that all devices should have a "My Example Menu 1" left-hand menu
 but ExampleDevice objects have a slightly different page from all other devices.
 
-Modifications
-
-The "Modifications" menu is a standard menu that this ZenPack overrides in 2 different ways.
-Both are largely copies of the standard viewHistory.pt file in 
-$ZENHOME/Products/ZenModel/skins/zenmodel.  As with menu1, there is a different
-override for devices of object class ExampleDevice, as opposed to all other devices.  Examine
-the title of the page to see which code is actually used.
-
-The skins subdirectory has a copy of viewHistory.pt which simply has its title changed.
-
-The browser/templates subdirectory has a viewHistory.pt with a different title and a small
-modification to the odd/even test (see comments in code).  browser/configure.zcml also needs
-an entry to point to browser/templates/viewHistory.pt which, in this case, limits this
-particular override to devices of object class ExampleDevice.
-
-The result of this is that all devices should have an overriden "Modifications" left-hand 
-menu but ExampleDevice objects have a slightly different page from all other devices.
 
 Left hand menus limited to specific devices
 --------------------------------------------
 
-Menu2
+   Menu2
+   -----
 
 The "My Example Menu 2" is only defined for devices of object class ExampleDevice and is
 only defined in the V3-style combination of browser/configure.zcml and 
