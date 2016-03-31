@@ -6,13 +6,15 @@ Description
 ===========
 
 This README describes  the various ways to create different types of menus.
-The code started from the ZenPackTemplate work done by Chet Luther - see
-https://github.com/zenoss/ZenPackTemplate
+
+The ZenPack is virtually a copy of ZenPacks.skills1st.MenuExamples with a few
+items tidied up.  That ZenPack started from the ZenPackTemplate work done by 
+Chet Luther - see https://github.com/zenoss/ZenPackTemplate
 
 Requirements & Dependencies
 ===========================
 
-    * Zenoss Versions Supported: 3.x and 4.2
+    * Zenoss Versions Supported: 3.x, 4.2.x and 5.0.x
     * External Dependencies: 
     * ZenPack Dependencies:
     * Installation Notes: Restart zenoss entirely after installation
@@ -28,7 +30,7 @@ On installation, an organizer is created for the device class /Example/TestClass
 
 Device properties are set for some standard modeler plugins and some plugins that
 are provided by this ZenPack.  The zCommandUserName and zCommandPassword are set 
-and the zPythonClass is set to ZenPacks.skills1st.MenuExamples.ExampleDevice.
+and the zPythonClass is set to ZenPacks.community.MenuExamples.ExampleDevice.
 
 A test device called ExampleDevice1 is created in this object class.
 
@@ -47,7 +49,7 @@ The object class, ExampleDevice, inherits from Device and has an extra relations
 a contained component called ExampleComponent.
 
 There is also a command modeler plugin that gets hard disk information and populates the
-*existing* hardware relationship, harddisks, which shows as an extra component in the
+**existing** hardware relationship, harddisks, which shows as an extra component in the
 left-hand menu.
 
 The ExampleDevice object class has its factory information actions extended with
@@ -99,8 +101,7 @@ The menu simply produces an alert popup with the UID of the component.
 Left hand menus applicable to all devices
 -----------------------------------------
 
-Menu1
------
+**Menu1**
 
 This menu is defined in 2 different ways.  Look at the title of the page to see
 whether it is being driven by action factory\_type\_information under the skins
@@ -114,7 +115,7 @@ which Groups a device is a member of.
 The old-style menu is defined in the \_\_init\_\_.py in the base directory of the
 ZenPack.  It requires View permission and it is added to the
 factory actions of all devices. The definition of the layout is under
-the skins/ZenPacks.skills1st.MenuExamples subdirectory in the myExampleMenuOne.pt file.
+the skins/ZenPacks.community.MenuExamples subdirectory in the myExampleMenuOne.pt file.
  
 The new Zenoss 3 type of menu is defined in browser/configure.zcml as myExampleMenuOne. This
 V3-style definition is ONLY applicable for devices of object class ExampleDevice and the page
@@ -127,8 +128,7 @@ but ExampleDevice objects have a slightly different page from all other devices.
 Left hand menus limited to specific devices
 --------------------------------------------
 
-Menu2
------
+**Menu2**
 
 The "My Example Menu 2" is only defined for devices of object class ExampleDevice and is
 only defined in the V3-style combination of browser/configure.zcml and 
@@ -207,13 +207,13 @@ Adding a new menu to the footer bar
 ------------------------------------
 
 A whole new menu can be added to the footer bar at the bottom of the navigation tree menu.
-A viewlet entry is required in browser/Configure.zcml that points to the javascript file
+A viewlet entry is required in browser/configure.zcml that points to the javascript file
 myFooterMenu.js.  The menu has the standard "Model device" action, an action to run the same 
 predefined command discussed earlier, and an option "Set device comment / rackSlot" which 
 prompts for these two fields and then modifies the selected device accordingly.  
 
 The latter is another example of using a router ( Zenoss.remote.myAppRouter.myRouterFunc(opts, .....) 
-to channel data from the GUI and a facade (myAppFacade) to actually change the attributes
+to channel data from the GUI, and a facade (myAppFacade) to actually change the attributes
 of the object to the values that have been input. Both router and facade need entries in the
 top-level configure.zcml and the facade also needs an entry in interfaces.py.
 
@@ -227,7 +227,7 @@ manager field needs to be:
 manager="Products.ZenUI3.browser.interfaces.IHeadExtraManager"
 
 Two extra options have been added.  The first simply logs to a console log (which you could
-see with the Firebug plugin).  The second option again runs the predefined command discussed
+see with Firefox's Web Console tool).  The second option again runs the predefined command discussed
 earlier.
 
 
@@ -247,7 +247,6 @@ Download
 Download the appropriate package for your Zenoss version from the list
 below.
 
-* Zenoss 3.0+ `Latest Package for Python 2.6`_
 * Zenoss 4.0+ `Latest Package for Python 2.7`_
 
 ZenPack installation
@@ -256,11 +255,11 @@ ZenPack installation
 This ZenPack can be installed from the .egg file using either the GUI or the
 zenpack command line but, since it is demonstration code that you are likely to 
 want to modify, it is more likely installed in development mode.  From github - 
-https://github.com/jcurry/ZenPacks.skills1st.MenuExamples  use the ZIP button
-(top left) to download a tgz file and unpack it to a local directory, say,
+https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples  use the Download ZIP 
+button (top right) to download and unpack it to a local directory, say,
 $ZENHOME/local.  Install from $ZENHOME/local with:
 
-zenpack --link --install ZenPacks.skills1st.MenuExamples
+zenpack --link --install ZenPacks.community.MenuExamples
 
 Restart zenoss completely after installation.
 
@@ -268,12 +267,8 @@ Restart zenoss completely after installation.
 
 Change History
 ==============
-* 1.0
-   * Initial Release
-* 1.0.3
-   * All menus now working
-* 2.0
-   * Tested with Zenoss Core 4.2
+* 2.0.0
+   * Initial Release - version chosen to match ZenPacks.skills1st.MenuExamples
 
 Screenshots
 ===========
@@ -288,16 +283,15 @@ Screenshots
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.6: https://github.com/jcurry/ZenPacks.skills1st.MenuExamples/blob/master/dist/ZenPacks.skills1st.MenuExamples-1.0.3-py2.6.egg?raw=true
-.. _Latest Package for Python 2.7: https://github.com/downloads/jcurry/ZenPacks.skills1st.MenuExamples/ZenPacks.skills1st.MenuExamples-2.0-py2.7.egg
+.. _Latest Package for Python 2.7: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/dist/ZenPacks.community.MenuExamples-2.0.0-py2.7.egg 
 
-.. |menus1| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus1.jpg
-.. |menus2| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus2.jpg
-.. |menus3| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus3.jpg
-.. |menus4| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus4.jpg
-.. |menus5| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus5.jpg
-.. |menus6| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus6.jpg
-.. |menus7| image:: http://github.com/jcurry/ZenPacks.skills1st.MenuExamples/raw/master/screenshots/menus7.jpg
+.. |menus1| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus1.jpg
+.. |menus2| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus2.jpg 
+.. |menus3| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus3.jpg 
+.. |menus4| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus4.jpg 
+.. |menus5| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus5.jpg 
+.. |menus6| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus6.jpg 
+.. |menus7| image:: https://github.com/ZenossDevGuide/ZenPacks.community.MenuExamples/blob/master/screenshots/menus7.jpg
 
 
 Acknowledgements
