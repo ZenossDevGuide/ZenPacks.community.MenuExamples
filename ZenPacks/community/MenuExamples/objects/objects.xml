@@ -1,5 +1,19 @@
 <?xml version="1.0"?>
 <objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'Linux', 'userCommands', 'ssh_zenplug') -->
+<object id='/zport/dmd/Devices/Server/Linux/userCommands/ssh_zenplug' module='Products.ZenModel.UserCommand' class='UserCommand'>
+<property id='zendoc' type='string'>
+ssh to a device - ssh keys set up to access remote zenplug user from local zenoss
+Kludges xterm to use DISPLAY :0.0 - your mileage may vary - check with echo $DISPLAY
+</property>
+<property type="text" id="description" mode="w" >
+ssh to a device - ssh keys set up to access remote zenplug user from local zenoss
+Kludges xterm to use DISPLAY :0.0 - your mileage may vary - check with echo $DISPLAY
+</property>
+<property type="text" id="command" mode="w" >
+/usr/bin/xterm -display :0.0 -fn 10x20 -fg white -bg blue -title "xterm as zenplug"  -e ssh -l zenplug ${device/manageIp}
+</property>
+</object>
 <!-- ('', 'zport', 'dmd', 'Devices', 'rrdTemplates', 'ExampleComponent') -->
 <object id='/zport/dmd/Devices/rrdTemplates/ExampleComponent' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
 <property type="string" id="targetPythonClass" mode="w" >

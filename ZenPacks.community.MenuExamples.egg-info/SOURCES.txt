@@ -37,6 +37,7 @@ ZenPacks/community/MenuExamples/browser/resources/css/placeholder.txt
 ZenPacks/community/MenuExamples/browser/resources/img/placeholder.txt
 ZenPacks/community/MenuExamples/browser/resources/js/ExampleDevice.js
 ZenPacks/community/MenuExamples/browser/resources/js/add_example_device_option.js
+ZenPacks/community/MenuExamples/browser/resources/js/add_example_device_option.js_20160406
 ZenPacks/community/MenuExamples/browser/resources/js/amazing.js
 ZenPacks/community/MenuExamples/browser/resources/js/deviceGearMenu.js
 ZenPacks/community/MenuExamples/browser/resources/js/myApp.js
@@ -69,7 +70,6 @@ ZenPacks/community/MenuExamples/modeler/plugins/community/snmp/__init__.pyc
 ZenPacks/community/MenuExamples/objects/objects.xml
 ZenPacks/community/MenuExamples/objects/objects.xml_from_skills_zp
 ZenPacks/community/MenuExamples/skins/ZenPacks.community.MenuExamples/myExampleMenuOne.pt
-ZenPacks/community/MenuExamples/skins/ZenPacks.community.MenuExamples/roleOverview.pt
 ZenPacks/community/MenuExamples/skins/ZenPacks.community.MenuExamples/viewHistory.pt
 ZenPacks/community/MenuExamples/tests/__init__.py
 ZenPacks/community/MenuExamples/tests/testExample.py

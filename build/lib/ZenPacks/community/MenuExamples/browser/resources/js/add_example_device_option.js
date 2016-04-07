@@ -70,8 +70,7 @@ var add_ExampleDevice = new Zenoss.Action({
                                         text: _t('View Job Log'),
                                         handler: function() {
                                             window.location =
-                                                '/zport/dmd/JobManager/jobs/' +
-                                                response.jobId + '/viewlog';
+                                                '/zport/dmd/JobManager/joblist#jobs:' + response.jobId;
                                         }
                                     }]
                                 }).show();
